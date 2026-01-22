@@ -1,0 +1,27 @@
+.outerContainer{
+    background-color: var(--black);
+
+}
+
+.mainContainer{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+h1{
+    margin: 0;
+}
+
+.mainHeading{
+    text-align: center;
+    color: var(--white);
+    font-size: 50px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+}
+
+@media(max-width:576px){
+    .mainHeading{
+        font-size: 35px;
+    }
+}

@@ -1,0 +1,19 @@
+
+
+
+:root {
+  --black: #0B0B0B;
+  --white: #FFFFFF;
+  --gray: #CFCFCF;
+  --dark-card: #141414;
+  --font-main: "Playfair Display", serif;
+  --gray2: #928f8f;
+}
+
+
+
+body {
+  font-family: var(--font-main);
+  margin:0px;
+}
+

@@ -1,0 +1,94 @@
+/* ===============================
+   SWEETALERT GLOBAL THEME
+   =============================== */
+
+.swal-dark {
+  background: #0a0a0a !important;
+  color: #ffffff !important;
+  border-radius: 14px;
+}
+
+/* Soft premium glow (desktop) */
+.swal-glow {
+  box-shadow:
+    0 0 12px rgba(255, 255, 255, 0.18),
+    0 0 28px rgba(255, 255, 255, 0.12);
+}
+
+/* Optional subtle border */
+.swal-border {
+  border: 1.5px solid #6b7280;
+}
+
+/* Backdrop blur */
+.swal2-backdrop-show {
+  backdrop-filter: blur(4px);
+}
+
+/* ===============================
+   RESPONSIVE CORE FIX
+   =============================== */
+
+/* All screens */
+.swal2-popup {
+  max-width: 520px !important;
+  box-sizing: border-box;
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .swal2-popup {
+    width: 90% !important;
+    padding: 1.4rem !important;
+  }
+
+  .swal2-title {
+    font-size: 1.2rem !important;
+  }
+
+  .swal2-html-container,
+  .swal2-content {
+    font-size: 0.95rem !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .swal2-popup {
+    width: 92% !important;
+    padding: 1.2rem !important;
+    border-radius: 12px;
+  }
+
+  .swal2-title {
+    font-size: 1.05rem !important;
+    margin-bottom: 0.4rem !important;
+  }
+
+  .swal2-html-container,
+  .swal2-content {
+    font-size: 0.88rem !important;
+    line-height: 1.4;
+  }
+
+  .swal2-icon {
+    transform: scale(0.85);
+    margin: 0.6rem auto !important;
+  }
+
+  .swal2-actions {
+    margin-top: 0.8rem !important;
+  }
+}
+
+/* Ultra small devices */
+@media (max-width: 360px) {
+  .swal2-popup {
+    width: 95% !important;
+    padding: 1rem !important;
+  }
+
+  .swal2-title {
+    font-size: 1rem !important;
+  }
+}

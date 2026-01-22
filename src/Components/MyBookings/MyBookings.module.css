@@ -1,0 +1,828 @@
+/* ======================== */
+/* OUTER CONTAINER & GLOBAL */
+/* ======================== */
+.outerContainer {
+  background-color: var(--black);
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: 'Poppins', sans-serif;
+  color: var(--white);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* ======================== */
+/* EMAIL FORM */
+/* ======================== */
+.emailFormContainer {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 15px;
+  margin-bottom: 20px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+.emailForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.emailInput {
+  flex: 1;
+  padding: 12px 20px;
+  border-radius: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.03);
+  color: var(--white);
+  font-size: 14px;
+  outline: none;
+  min-width: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: 'Poppins', sans-serif;
+}
+
+.emailInput::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.emailInput:focus {
+  border-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.05);
+}
+
+/* ======================== */
+/* BUTTONS */
+/* ======================== */
+.btnSubmit,
+.btnExplore {
+  background-color: var(--white);
+  color: var(--black);
+  padding: 12px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  border: 2px solid var(--white);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.3px;
+}
+
+.btnSubmit:hover:not(:disabled),
+.btnExplore:hover {
+  background-color: transparent;
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15);
+}
+
+.btnSubmit:active:not(:disabled),
+.btnExplore:active {
+  transform: translateY(0);
+}
+
+.btnSubmit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ======================== */
+/* LOADING & ERROR */
+/* ======================== */
+.loading {
+  text-align: center;
+  margin: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.loading p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top-color: var(--white);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.errorMessage {
+  text-align: center;
+  margin: 30px 0;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+}
+
+/* ======================== */
+/* NO BOOKINGS MESSAGE */
+/* ======================== */
+.noBookings {
+  text-align: center;
+  margin: 40px 0;
+  padding: 40px 20px;
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+}
+
+.noBookings p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+/* ======================== */
+/* BOOKING CARD */
+/* ======================== */
+.bookingCard {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border-radius: 16px;
+  padding: 25px;
+  margin-bottom: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bookingCard:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Booking Header */
+.bookingHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.bookingTitle {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.bookingDate {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.06);
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+/* ======================== */
+/* PERSONAL DETAILS SECTION */
+/* ======================== */
+.personalDetailsSection {
+  margin-bottom: 20px;
+  padding: 18px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sectionSubtitle {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--white);
+  letter-spacing: -0.2px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sectionSubtitle::before {
+  content: '';
+  width: 3px;
+  height: 16px;
+  background-color: var(--white);
+  border-radius: 2px;
+}
+
+.personalDetailsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.personalDetailItem {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.personalDetailItem:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.personalLabel {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 700;
+}
+
+.personalValue {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 500;
+  word-break: break-word;
+}
+
+/* ======================== */
+/* BOOKING INFO SECTION */
+/* ======================== */
+.bookingInfoSection {
+  margin-bottom: 20px;
+  padding: 18px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.bookingInfo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.infoItem:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.infoLabel {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 700;
+}
+
+.infoValue {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.vatNote {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 12px;
+  margin-top: 12px;
+  padding: 8px 12px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  border-left: 3px solid rgba(255, 255, 255, 0.3);
+  font-style: italic;
+}
+
+/* ======================== */
+/* CART ITEMS SECTION */
+/* ======================== */
+.cartItemsSection {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sectionTitle {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--white);
+  letter-spacing: -0.2px;
+}
+
+.sectionTitle::before {
+  content: '';
+  width: 3px;
+  height: 16px;
+  background-color: var(--white);
+  border-radius: 2px;
+}
+
+.itemCount {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 3px 10px;
+  border-radius: 50px;
+}
+
+/* Cart Items List */
+.cartItemsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Individual Item */
+.cartItem {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cartItem:hover {
+  background-color: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateX(4px);
+}
+
+/* Item Header: Place / Tour */
+.itemHeader {
+  margin-bottom: 3px;
+}
+
+.itemTitle {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--white);
+  letter-spacing: -0.2px;
+}
+
+/* Item Details */
+.itemDetails {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.detailLabel {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+}
+
+.detailValue {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+/* Tour Date Badge */
+.itemDate {
+  background-color: var(--white);
+  color: var(--black);
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 50px;
+  font-size: 12px;
+  white-space: nowrap;
+  display: inline-block;
+  letter-spacing: 0.2px;
+}
+
+/* ======================== */
+/* PRIVATE TRANSFER SECTION */
+/* ======================== */
+.transferSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 6px;
+}
+
+.transferHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.transferBadge {
+  display: inline-block;
+  background-color: var(--white);
+  color: var(--black);
+  font-weight: 600;
+  padding: 5px 14px;
+  border-radius: 50px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.transferDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background-color: rgba(255, 255, 255, 0.02);
+  border-radius: 6px;
+}
+
+.transferInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.transferLabel {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+}
+
+.transferType {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.transferPriceBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+}
+
+.transferPriceLabel {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+}
+
+.transferPrice {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--white);
+  white-space: nowrap;
+}
+
+/* Total Item Price */
+.itemTotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--white);
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.itemTotal .price {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Overall Total */
+.overallTotal {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 2px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.totalLabel {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.totalAmount {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.emptyMessage {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 13px;
+  padding: 20px;
+}
+
+/* ======================== */
+/* RESPONSIVE */
+/* ======================== */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .outerContainer {
+    padding: 30px 15px;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .emailForm {
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .emailInput {
+    width: 100%;
+  }
+
+  .btnSubmit,
+  .btnExplore {
+    width: 100%;
+  }
+
+  .bookingCard {
+    padding: 20px 16px;
+  }
+
+  .bookingTitle {
+    font-size: 18px;
+  }
+
+  .bookingHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bookingDate {
+    align-self: flex-start;
+  }
+
+  .personalDetailsSection,
+  .bookingInfoSection,
+  .cartItemsSection {
+    padding: 16px;
+  }
+
+  .personalDetailsGrid,
+  .bookingInfo {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .itemDetails {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .transferDetails {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .transferPriceBox {
+    align-items: flex-start;
+  }
+
+  .itemTotal,
+  .overallTotal {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .totalAmount {
+    font-size: 18px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .outerContainer {
+    padding: 25px 10px;
+  }
+
+  .emailFormContainer {
+    margin-bottom: 30px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+
+  .emailInput {
+    padding: 11px 18px;
+    font-size: 13px;
+  }
+
+  .btnSubmit,
+  .btnExplore {
+    padding: 11px 24px;
+    font-size: 13px;
+  }
+
+  .bookingCard {
+    padding: 16px 12px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
+
+  .bookingTitle {
+    font-size: 17px;
+  }
+
+  .bookingDate {
+    font-size: 11px;
+    padding: 5px 12px;
+  }
+
+  .personalDetailsSection,
+  .bookingInfoSection,
+  .cartItemsSection {
+    padding: 14px 12px;
+    border-radius: 10px;
+  }
+
+  .sectionTitle,
+  .sectionSubtitle {
+    font-size: 14px;
+  }
+
+  .sectionTitle::before,
+  .sectionSubtitle::before {
+    width: 2px;
+    height: 14px;
+  }
+
+  .personalDetailsGrid {
+    gap: 10px;
+  }
+
+  .personalDetailItem,
+  .infoItem {
+    padding: 10px;
+  }
+
+  .personalValue,
+  .infoValue {
+    font-size: 12px;
+  }
+
+  .cartItem {
+    padding: 14px;
+    border-radius: 10px;
+  }
+
+  .itemTitle {
+    font-size: 14px;
+  }
+
+  .transferSection {
+    padding: 10px;
+  }
+
+  .transferBadge {
+    font-size: 9px;
+    padding: 4px 12px;
+  }
+
+  .transferDetails {
+    padding: 8px 10px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .transferPriceBox {
+    align-items: flex-start;
+  }
+
+  .transferType {
+    font-size: 12px;
+  }
+
+  .transferPrice {
+    font-size: 13px;
+  }
+
+  .itemTotal .price {
+    font-size: 15px;
+  }
+
+  .totalAmount {
+    font-size: 18px;
+  }
+
+  .noBookings {
+    padding: 30px 12px;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1300px;
+  }
+
+  .bookingCard {
+    padding: 30px;
+  }
+
+  .personalDetailsSection,
+  .bookingInfoSection,
+  .cartItemsSection {
+    padding: 22px;
+  }
+
+  .transferSection {
+    padding: 16px;
+  }
+
+  .transferDetails {
+    padding: 14px;
+  }
+}

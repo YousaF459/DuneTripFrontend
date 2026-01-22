@@ -1,0 +1,58 @@
+.outerContainer{
+    background-color: var(--black);
+}
+
+
+.pageContainer {
+  padding: 20px;
+  background: #0a0a0a;
+  color: #fff;
+  border-radius: 16px;
+  box-shadow:
+    0 0 15px rgba(255, 255, 255, 0.1),
+    0 0 30px rgba(255, 255, 255, 0.05);
+}
+
+.title {
+  padding-top: 30px;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 25px;
+}
+
+.section {
+  margin-bottom: 25px;
+}
+
+.section h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.section p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .pageContainer {
+    padding: 20px 15px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .section h2 {
+    font-size: 1.1rem;
+  }
+}

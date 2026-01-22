@@ -1,0 +1,12 @@
+Sand Gold #C9A24D
+Black #0B0B0B
+White #FFFFFF
+Sunset Orange #E76F51
+
+Breakpoint	Class Prefix	Screen Size
+Extra small	xs (default)	< 576px (mobiles)
+Small	sm	≥ 576px (large phones)
+Medium	md	≥ 768px (tablets)
+Large	lg	≥ 992px (laptops)
+Extra large	xl	≥ 1200px (desktops)
+Extra extra large	xxl	≥ 1400px (large screens)

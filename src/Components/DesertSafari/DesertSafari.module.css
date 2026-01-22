@@ -1,0 +1,12 @@
+
+.mainContainer{
+    background-color: var(--black);
+}
+
+.mainHeading{
+    color: var(--white);
+    letter-spacing: 2px;
+    font-size: 50px;
+    padding-top: 30px;
+    margin-bottom: 30px;
+}

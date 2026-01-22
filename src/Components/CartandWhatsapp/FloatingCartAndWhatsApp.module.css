@@ -1,0 +1,201 @@
+/* ======================== */
+/* FLOATING WRAPPER */
+/* ======================== */
+.floatingWrapper {
+  position: fixed;
+  bottom: 70px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  z-index: 999;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ======================== */
+/* WHATSAPP BUTTON */
+/* ======================== */
+.whatsappBtn {
+  background-color: #25D366;
+  color: var(--white);
+  border: none;
+  border-radius: 50px;
+  padding: 14px 22px;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.3px;
+}
+
+.whatsappBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+  background-color: #20BA5A;
+}
+
+.whatsappBtn:active {
+  transform: translateY(-1px);
+}
+
+/* ======================== */
+/* CART BUTTON */
+/* ======================== */
+.cartBtn {
+  background-color: var(--white);
+  color: var(--black);
+  border: 2px solid var(--white);
+  border-radius: 50px;
+  padding: 14px 22px;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.3px;
+  text-decoration: none;
+}
+
+.cartBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.cartBtn:active {
+  transform: translateY(-1px);
+}
+
+/* Pulse animation when item added */
+.pulse {
+  animation: pulseAnimation 0.6s ease-out;
+}
+
+@keyframes pulseAnimation {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(255, 255, 255, 0.6);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+  }
+}
+
+.btnText {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Cart Count Badge */
+.cartCount {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #ff3b30;
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 50%;
+  min-width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+  box-shadow: 0 2px 8px rgba(255, 59, 48, 0.4);
+  border: 2px solid var(--black);
+  animation: bounceIn 0.4s ease-out;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ======================== */
+/* RESPONSIVE */
+/* ======================== */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .floatingWrapper {
+    bottom: 70px;
+    right: 20px;
+    gap: 12px;
+  }
+
+  .whatsappBtn,
+  .cartBtn {
+    padding: 12px 18px;
+    font-size: 13px;
+  }
+
+  .whatsappBtn svg,
+  .cartBtn svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .floatingWrapper {
+    bottom: 50px;
+    right: 20px;
+    gap: 10px;
+  }
+
+  .whatsappBtn,
+  .cartBtn {
+    padding: 11px 16px;
+    font-size: 12px;
+  }
+
+  .btnText {
+    display: none;
+  }
+
+  .whatsappBtn,
+  .cartBtn {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  .cartCount {
+    top: -6px;
+    right: -6px;
+    min-width: 20px;
+    height: 20px;
+    font-size: 10px;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1400px) {
+  .floatingWrapper {
+    bottom: 40px;
+    right: 40px;
+  }
+}

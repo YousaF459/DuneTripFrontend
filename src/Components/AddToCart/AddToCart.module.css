@@ -1,0 +1,570 @@
+.cartPageWrapper {
+  background-color: var(--black);
+  min-height: 100vh;
+  padding: 40px 0;
+}
+
+.emptyCart{
+  padding-top: 20px;
+  color: var(--white);
+  padding-bottom: 20px;
+}
+
+/* Section Titles */
+.sectionTitle {
+  font-size: 28px;
+  color: var(--white);
+  font-weight: 600;
+  margin-bottom: 25px;
+  letter-spacing: 0.5px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Cart Items Section */
+.cartItemsSection {
+  background-color: var(--black);
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15),
+    0 4px 25px rgba(255, 255, 255, 0.08);
+}
+
+.cartItem {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  padding-right: 100px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.cartItem:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  transform: translateX(5px);
+}
+
+.cartItemImage {
+  flex-shrink: 0;
+  width: 150px;
+  height: 120px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cartItemImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cartItemDetails {
+  flex-grow: 1;
+}
+
+.cartItemTitle {
+  font-size: 20px;
+  color: var(--white);
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: 0.3px;
+}
+
+.cartItemPrice {
+  font-size: 24px;
+  color: var(--white);
+  font-weight: 700;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.groupType {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 400;
+}
+
+.personSelector {
+  margin-top: 15px;
+  display: flex;
+  column-gap: 30px;
+}
+
+.personSelector label {
+  display: block;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.personInput {
+  width: 100px;
+  padding: 10px 15px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.personInput:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.removeBtn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 0, 0, 0.5);
+  color: rgba(255, 100, 100, 0.9);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.removeBtn:hover {
+  background-color: rgba(255, 0, 0, 0.15);
+  border-color: rgba(255, 0, 0, 0.8);
+  color: rgba(255, 100, 100, 1);
+}
+
+/* Booking Form */
+.bookingForm {
+  background-color: var(--black);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15),
+    0 4px 25px rgba(255, 255, 255, 0.08);
+}
+
+.formLabel {
+  display: block;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 8px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.formInput {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: var(--white);
+  font-size: 15px;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.formInput::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.formInput:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Cart Summary */
+.cartSummary {
+  background-color: var(--black);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15),
+    0 4px 25px rgba(255, 255, 255, 0.08);
+  position: sticky;
+  top: 20px;
+}
+
+.summaryTitle {
+  font-size: 24px;
+  color: var(--white);
+  font-weight: 600;
+  margin-bottom: 25px;
+  letter-spacing: 0.5px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.summaryContent {
+  margin-bottom: 25px;
+}
+
+/* Individual Summary Items */
+.summaryItem {
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.summaryItemName {
+  font-size: 16px;
+  color: var(--white);
+  font-weight: 500;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.summaryItemQty {
+  display: block;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+.summaryItemPrice {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.totalRow {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--white);
+  padding-top: 15px;
+  margin-top: 10px;
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+  border-bottom: none;
+}
+
+.checkoutBtn {
+  width: 100%;
+  background-color: var(--white);
+  border: 2px solid var(--white);
+  color: var(--black);
+  padding: 14px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  margin-bottom: 12px;
+}
+
+.checkoutBtn:hover {
+  background-color: transparent;
+  color: var(--white);
+  transform: scale(1.02);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+.whatsappCheckout {
+  width: 100%;
+  background-color: #25d366;
+  border: 2px solid #25d366;
+  color: var(--white);
+  padding: 14px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.whatsappCheckout:hover {
+  background-color: #20ba5a;
+  border-color: #20ba5a;
+  transform: scale(1.02);
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+}
+
+
+.durationTimeDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.durationTimeLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--white);
+  letter-spacing: 0.4px;
+}
+
+.tourDate {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  padding: 12px 14px;
+  color: var(--white);
+  font-size: 15px;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tourDate option {
+  background-color: #000;
+  color: #fff;
+}
+
+.tourDate:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.tourDate:focus {
+  border-color: #fff;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+.whatsappContact{
+  color: #25d366;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.tourDate::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+/* Duration Selector in Cart */
+.durationSelectorCart {
+  margin-top: 15px;
+}
+
+.durationSelectorCart label {
+  display: block;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 8px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.durationSelect {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: var(--white);
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.durationSelect:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.durationSelect option {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 10px;
+}
+
+
+
+.basePriceNote {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 400;
+  margin-left: 5px;
+}
+
+.durationBadge {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+  margin-left: 5px;
+}
+
+.emptyCart {
+  color: rgba(255, 255, 255, 0.6);
+  padding: 40px 0;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.tourDate {
+  width: 100%;
+}
+
+.privateTransferIncluded{
+  color:var(--white) ;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+/* Container for checkbox and label */
+.privateTransferCheckbox {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 16px;
+  color: var(--white);
+  gap: 8px;
+  margin-top: 20px;
+}
+
+/* Style for the checkbox itself */
+.privateTransferCheckbox input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* Label text */
+.privateTransferLabel {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+/* Price text inside label */
+.privateTransferPrice {
+  font-weight: bold;
+  color: var(--white); /* blue color for price, can change */
+}
+
+.vatTax{
+  font-size: 16px;
+  color:rgba(255, 255, 255, 0.6);
+  font-family:Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+.summaryPrivateTransfer{
+  font-size: 16px;
+  color:rgba(255, 255, 255, 0.6);
+}
+
+.paymentNotice {
+  background-color: rgba(255, 255, 255, 0.05); /* subtle dark background */
+  color: #fff; /* white text */
+  border-left: 4px solid #f59e0b; /* yellow/orange accent */
+  padding: 12px 16px;
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* space between icon and text if you use one */
+}
+
+.paymentNotice strong {
+  color: #f59e0b; /* highlight important text */
+}
+
+
+.supportNotice {
+  background-color: rgba(255, 255, 255, 0.05); /* subtle dark background */
+  color: #fff;
+  border-left: 4px solid #22c55e; /* green accent */
+  padding: 12px 16px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px; /* spacing between text and link */
+}
+
+.supportNotice a.whatsappLink {
+  color: #22c55e; /* green for WhatsApp */
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.supportNotice a.whatsappLink:hover {
+  color: #16a34a; /* darker green on hover */
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .cartSummary {
+    position: static;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cartItem {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .cartItemImage {
+    width: 100%;
+    height: 200px;
+  }
+
+  .cartItemDetails {
+    width: 100%;
+  }
+
+  .cartItemTitle {
+    padding-right: 0;
+  }
+
+  .removeBtn {
+    position: static;
+    margin-top: 15px;
+    width: 100%;
+  }
+
+  .cartPageWrapper {
+    padding: 20px 0;
+  }
+
+  .cartItemsSection,
+  .bookingForm,
+  .cartSummary {
+    padding: 20px;
+  }
+
+  .personSelector {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  column-gap: 0px;
+  row-gap: 10px;
+}
+}
