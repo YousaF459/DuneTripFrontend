@@ -7,6 +7,11 @@ import { useEffect, useState } from 'react';
 import ToursLoader from '../Loader/Loader.jsx'
 import ToursError from '../Error/Error.jsx'
 import {sendConversionEvent} from '../../ConversionEvents'
+import HeroSection from './HeroSection.jsx';
+import WhyChooseUs from './WhyChooseUs.jsx';
+import StatsCounter from './StatsCounter.jsx';
+import HowItWorks from './HowItWorks.jsx';
+import CTABanner from './CTABanner.jsx';
 
 function Home(){
    
@@ -70,6 +75,14 @@ const [cardData,setCardData]=useState([])
           showHighlights={false}
         />
       )}
+
+
+      <HeroSection/>
+      <WhyChooseUs/>
+      <StatsCounter/>
+      <HowItWorks/>
+      <CTABanner/>
+
     </>
     )
 

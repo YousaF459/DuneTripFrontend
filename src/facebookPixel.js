@@ -1,4 +1,4 @@
-import ReactPixel from "react-facebook-pixel";
+import ReactPixel from "react-facebook-pixel";;
 
 export const initFacebookPixel = () => {
   const fbPixelId = import.meta.env.VITE_FB_PIXEL_ID;

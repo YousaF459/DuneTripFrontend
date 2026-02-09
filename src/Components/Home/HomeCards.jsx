@@ -57,7 +57,7 @@ const handleWhatsAppClick = () => {
 
     return(
     <div className={`${styles.card}`}>
-      <img src={card?.image} alt={card?.title} className={styles.cardImage} />
+      <img src={card?.image} alt={card?.title} className={styles.cardImage} loading="lazy"/>
       <h2 className={styles.cardTitle}>{card?.title}</h2>
 
 
@@ -88,7 +88,7 @@ const handleWhatsAppClick = () => {
 
       {card?.price && (
   <p className={styles.cardPrice}>
-    {card?.price} AED<span>per {card?.grouptype}</span>
+    {card?.price} AED<span>/ {card?.grouptype}</span>
   </p>
 )}
     {!showHighlights && (

@@ -66,8 +66,8 @@ return(
       {!loading && !error && (
         <CardsHandler 
           cards={cardData} 
-          splitDescription={false}
-          showHighlights={false}
+          splitDescription={true}
+          showHighlights={true}
         />
       )}
     </>

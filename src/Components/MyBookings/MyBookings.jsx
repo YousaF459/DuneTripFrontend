@@ -45,7 +45,7 @@ function MyBookings() {
       );
 
       const data = response.data;
-      console.log(data);
+      
       
       const bookingList = Array.isArray(data) ? data : data.bookings || [];
 

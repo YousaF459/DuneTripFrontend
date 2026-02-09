@@ -417,6 +417,25 @@ const handleCheckout = async () => {
     navigate("/booking-confirmed");
 
   } catch (error) {
+   
+
+  const status = error.response?.status;
+  const detail = error.response?.data?.detail;
+
+  if (status === 429) {
+    // 🔥 RATE LIMIT ERROR
+    Swal.fire({
+    icon: "info",
+    title: "Please Wait a Moment ⏳",
+    text:
+      detail ||
+      "You’ve just submitted a booking request. To avoid duplicate bookings, please wait one minute before trying again.",
+    background: "#0a0a0a",
+    color: "#fff",
+    customClass: { popup: "swal-dark swal-border" },
+  });
+    return;
+  }
     console.error(error.response?.data || error);
     Swal.fire({
       icon: "error",
@@ -616,7 +635,7 @@ const handleCheckout = async () => {
                       type="text"
                       id="mobile"
                       className={styles.formInput}
-                      placeholder="Enter your mobile number"
+                      placeholder="Include country code, e.g. +971501234567"
                       required
                     />
                   </div>
@@ -628,7 +647,7 @@ const handleCheckout = async () => {
                       type="text"
                       id="whatsapp"
                       className={styles.formInput}
-                      placeholder="Enter your WhatsApp number"
+                      placeholder="WhatsApp number e.g. +971501234567"
                     />
                   </div>
                   <div className="col-md-6">

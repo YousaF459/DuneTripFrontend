@@ -4,11 +4,15 @@ import { useEffect, useState } from 'react'
 import axiosApi from '../Axios/Axios.js'
 import ReactPixel from "react-facebook-pixel";
 import {sendConversionEvent} from '../../ConversionEvents'
+import ToursLoader from '../Loader/Loader.jsx'
+import ToursError from '../Error/Error.jsx'
 
 
 function Yachts(){
 
     const [cardData,setCardData]=useState([])
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
 
 
   
@@ -24,27 +28,53 @@ function Yachts(){
 }, []);
 
 
-    useEffect(()=>{
-        axiosApi.get('yachts/')
-        .then(res => {
-            // Add type field to each tour
-            const toursWithType = res.data.map(tour => ({
-                ...tour,
-                type: 'yachts'
-            }));
-            setCardData(toursWithType);
-            console.log(toursWithType);
-        })
-    },[])
+    const fetchTours = () => {
+    setLoading(true);
+    setError(false);
+    
+    axiosApi.get('yachts/')
+      .then(res => {
+        // Add type field to each tour
+        const toursWithType = res.data.map(tour => ({
+          ...tour,
+          type: 'yachts'
+        }));
+        setCardData(toursWithType);
+        
+        setLoading(false);
+      })
+      .catch(err => {
+    
+        setError(true);
+        setLoading(false);
+      });
+  };
+
+  useEffect(() => {
+    fetchTours();
+  }, []);
 
 return(
         <>
         <SectionHeader title="Yachts"/> 
 
-        <CardsHandler  cards={cardData} splitDescription={true}
-            showHighlights={true}/>
+
+         {loading && <ToursLoader />}
+
+      {error && !loading && <ToursError onRetry={fetchTours} />}
+
+      {!loading && !error && (
+        <CardsHandler 
+          cards={cardData} 
+          splitDescription={true}
+          showHighlights={true}
+        />
+      )}
+    </>
+
         
-        </>
+        
+        
     )
 
 }

@@ -1,0 +1,166 @@
+.howItWorksSection {
+  background-color: var(--black);
+  padding: 80px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--white);
+  text-align: center;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.sectionSubtitle {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  margin-bottom: 60px;
+  letter-spacing: 0.3px;
+}
+
+.stepsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  position: relative;
+}
+
+.stepCard {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stepCard:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.stepNumber {
+  font-size: 72px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.1);
+  line-height: 1;
+  margin-bottom: 20px;
+  letter-spacing: -3px;
+}
+
+.stepContent {
+  position: relative;
+  z-index: 1;
+}
+
+.stepTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 12px;
+  letter-spacing: -0.3px;
+}
+
+.stepDescription {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.connector {
+  display: none;
+}
+
+/* Desktop connector lines */
+@media (min-width: 769px) {
+  .stepsContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .stepCard {
+    position: relative;
+  }
+
+  .connector {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: -40px;
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 100%);
+    transform: translateY(-50%);
+  }
+
+  .connector::after {
+    content: '→';
+    position: absolute;
+    right: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 18px;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .howItWorksSection {
+    padding: 60px 20px;
+  }
+
+  .sectionTitle {
+    font-size: 32px;
+  }
+
+  .sectionSubtitle {
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+
+  .stepsContainer {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .stepCard {
+    padding: 30px 24px;
+  }
+
+  .stepNumber {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .howItWorksSection {
+    padding: 50px 15px;
+  }
+
+  .sectionTitle {
+    font-size: 28px;
+  }
+
+  .stepNumber {
+    font-size: 52px;
+  }
+
+  .stepTitle {
+    font-size: 20px;
+  }
+
+  .stepDescription {
+    font-size: 13px;
+  }
+}

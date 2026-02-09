@@ -48,7 +48,7 @@ export default function FloatingCartAndWhatsApp() {
         onClick={handleWhatsAppClick}
         aria-label="Contact us on WhatsApp"
       >
-        <FaWhatsapp size={22} />
+        <FaWhatsapp className={styles.whatsappIcon}  />
         <span className={styles.btnText}>WhatsApp</span>
       </button>
 
